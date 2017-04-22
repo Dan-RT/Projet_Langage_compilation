@@ -16,16 +16,19 @@ private:
     
     bool axiome;
     vector<string> tab_rules;
-    static vector<char> tab_name;
     
 public:
     
     Non_terminal();
     
+    static vector<string> tab_name;
+
+    
     void set_axiome(bool choice);
     void add_rules(string rule);
     void delete_rules();
-    void look_for_non_terminals();
+    void look_for_terminals();
+    void set_name(string name);
     
     bool is_axiome();
     string get_rule(int indice);

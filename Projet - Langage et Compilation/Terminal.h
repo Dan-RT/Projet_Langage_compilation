@@ -13,7 +13,7 @@ using namespace std;
 class Terminal : public Variable {
 
 private:
-    string name;
+    
     
 public:
     

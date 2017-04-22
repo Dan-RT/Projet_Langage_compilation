@@ -30,9 +30,23 @@ void show_all_rules (vector<Non_terminal> &tab_NT) {
             tab_NT[i].show_rules();
         }
     }
-    
 }
 
+void show_all_terminals (vector<Terminal> tab_T) {
+    
+    cout << "Non terminals : " << endl;
+    for (int i = 0; i < tab_T.size(); i++) {
+        cout << tab_T[i].get_name() << endl;
+    }
+}
+
+void show_all_non_terminals (vector<Non_terminal> tab_NT) {
+    
+    cout << "Terminals : " << endl;
+    for (int i = 0; i < tab_NT.size(); i++) {
+        cout << tab_NT[i].get_name() << endl;
+    }
+}
 
 
 int loading (vector<Non_terminal> &tab_NT) {
@@ -101,24 +115,88 @@ int loading (vector<Non_terminal> &tab_NT) {
 
 
 
+void get_name_NT (vector<Non_terminal> &tab_NT, vector<string> &tab_name) {
+    
+    for (int i = 0; i < tab_NT.size(); i++) {
+        tab_name.push_back(tab_NT[i].get_name());
+    }
+}
+
+bool check_terminal_existence (string data, vector<string> tab_name_T) {
+    
+    for (int i = 0; i < tab_name_T.size(); i++) {
+        if (tab_name_T[i] == data) {
+            return true;
+        }
+    }
+    return false;
+}
 
 
-
-void create_non_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var) {
+void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T, vector<string> tab_name_NT, vector<string> tab_name_T) {
     
-    /*
-     Ici on arrive à récupérer chaque règle mais il faut implémenter une façon de chercher dans chaque règles les caractères correspondant au noms des non terminaux, car des terminaux peuvent très bien s'y trouver. Utilisez pq pas les fonctions find() et replace() du C++
-    */
+    get_name_NT(tab_NT, tab_name_NT);
+    
+    string rule_tested = "";
     
     
-    cout << "\n---Fonction création Non terminaux---\n" << endl;
-    for (int i = 0; i < tab_var.size(); i++) {
+    cout << "\n---Fonction création Terminaux---\n" << endl;
+    
+    for (int i = 0; i < tab_NT.size(); i++) {
         cout << "Var : " << tab_NT[i].get_name() << endl;
         for (int j = 0; j < tab_NT[i].get_nb_rules(); j++) {
             
-            cout << tab_NT[i].get_rule(j) << endl;
-            //fonction pas encore fini
+            rule_tested = tab_NT[i].get_rule(j);
             
+            cout << "Rule tested : " << rule_tested << endl;
+            
+            for (int k = 0; k < tab_name_NT.size(); k++) {
+                
+                size_t found = rule_tested.find(tab_name_NT[k]);
+                
+                if (found!=std::string::npos) {
+                    cout << tab_name_NT[k] << " found at: " << found << endl;
+                    rule_tested.erase(rule_tested.begin()+found);
+                    cout << "New rule : " << rule_tested << endl;
+                }
+                
+                //on vérifie avant d'ajouter que la règle n'est pas vide et qu'elle n'existe pas déjà dans le tableau
+                
+                if (k == tab_name_NT.size()-1) {
+                    
+                    if (rule_tested.size() > 1) {
+                        
+                        cout << "Taille de la rule_tested > 1" << endl;
+                        
+                        for (int l = 0; l < rule_tested.size(); l++) {
+                            
+                            char char_tmp = rule_tested[l];
+                            stringstream ss;
+                            string string_tmp = "";
+                            ss << char_tmp;
+                            ss >> string_tmp;
+                            
+                            if (check_terminal_existence(string_tmp, tab_name_T) != true) {
+                                cout << "Adding " << string_tmp << " to tab_name_T" << endl;
+                                Terminal var_t;
+                                tab_name_T.push_back(string_tmp);
+                                var_t.set_name(string_tmp);
+                                tab_var_T.push_back(var_t);
+                            }
+                        }
+                    } else {
+                        if ((rule_tested != "") && (check_terminal_existence(rule_tested, tab_name_T) != true)) {
+                            cout << "Adding " << rule_tested << " to tab_name_T" << endl;
+                            Terminal var_t;
+                            tab_name_T.push_back(rule_tested);
+                            var_t.set_name(rule_tested);
+                            tab_var_T.push_back(var_t);
+                        }
+                    }
+                    
+                    
+                }
+            }
         }
         cout << endl;
     }
