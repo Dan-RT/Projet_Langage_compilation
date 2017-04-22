@@ -106,6 +106,11 @@ int loading (vector<Terminal> &tab_var) {
 
 void create_non_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var) {
     
+    /*
+     Ici on arrive à récupérer chaque règle mais il faut implémenter une façon de chercher dans chaque règles les caractères correspondant au noms des non terminaux, car des terminaux peuvent très bien s'y trouver. Utilisez pq pas les fonctions find() et replace() du C++
+    */
+    
+    
     cout << "\n---Fonction création Non terminaux---\n" << endl;
     for (int i = 0; i < tab_var.size(); i++) {
         cout << "Var : " << tab_var[i].get_name() << endl;
