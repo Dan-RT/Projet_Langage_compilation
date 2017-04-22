@@ -14,6 +14,7 @@ using namespace std;
 
 int main() {
     
+    
     Terminal test;
     
     //test.set_name("test");
@@ -24,8 +25,8 @@ int main() {
 
     //test.set_axiome(true);
     
-    loading(tab_var);
-    show_all_rules(tab_var);
+    loading(tab_var_NT);
+    show_all_rules(tab_var_NT);
     create_non_terminals(tab_var_NT, tab_var);
     
     

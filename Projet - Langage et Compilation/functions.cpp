@@ -22,12 +22,12 @@ string choose_file() {  // fonction qui recupere le nom d'un fichier
 }
 
 
-void show_all_rules (vector<Terminal> &tab_var) {
+void show_all_rules (vector<Non_terminal> &tab_NT) {
     
-    for (int i = 0; i < tab_var.size(); i++) {
+    for (int i = 0; i < tab_NT.size(); i++) {
         
-        if (tab_var[i].get_type() == 1) {
-            tab_var[i].show_rules();
+        if (tab_NT[i].get_type() == 1) {
+            tab_NT[i].show_rules();
         }
     }
     
@@ -35,7 +35,7 @@ void show_all_rules (vector<Terminal> &tab_var) {
 
 
 
-int loading (vector<Terminal> &tab_var) {
+int loading (vector<Non_terminal> &tab_NT) {
     
     string name_file = choose_file();   //on appelle la fonciton permettant au user de choisir le nom du fichier
     string data = "";
@@ -50,7 +50,7 @@ int loading (vector<Terminal> &tab_var) {
         
         while (myStream >> data) {  //on avance d'un mot dans le fichier
             
-            Terminal tmp_NT;
+            Non_terminal tmp_NT;
             tmp_NT.set_name(data);
             tmp_NT.set_type(1);
             if (cpt == 0) {
@@ -81,7 +81,7 @@ int loading (vector<Terminal> &tab_var) {
             }
             cout << endl;
             
-            tab_var.push_back(tmp_NT);
+            tab_NT.push_back(tmp_NT);
             
             
         }
@@ -113,10 +113,12 @@ void create_non_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_v
     
     cout << "\n---Fonction création Non terminaux---\n" << endl;
     for (int i = 0; i < tab_var.size(); i++) {
-        cout << "Var : " << tab_var[i].get_name() << endl;
-        for (int j = 0; j < tab_var[i].get_nb_rules(); j++) {
-            cout << tab_var[i].get_rule(j) << endl;
+        cout << "Var : " << tab_NT[i].get_name() << endl;
+        for (int j = 0; j < tab_NT[i].get_nb_rules(); j++) {
+            
+            cout << tab_NT[i].get_rule(j) << endl;
             //fonction pas encore fini
+            
         }
         cout << endl;
     }

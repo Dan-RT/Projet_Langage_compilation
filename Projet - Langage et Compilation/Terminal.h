@@ -12,27 +12,13 @@ using namespace std;
 
 class Terminal : public Variable {
 
+private:
+    string name;
+    
 public:
     
     Terminal();
-    
-    void set_axiome(bool choice);
-    void add_rules(string rule);
-    void delete_rules();
-    void look_for_non_terminals();
-    
-    bool is_axiome();
-    string get_rule(int indice);
-    int get_nb_rules() const;
-    void show_rules() const;
-    
     virtual ~Terminal();
-    
-private:
-    
-    bool axiome;
-    vector<string> tab_rules;
-    
     
 };
 
