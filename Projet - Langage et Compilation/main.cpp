@@ -1,18 +1,32 @@
-//
-//  main.cpp
-//  Projet - Langage et Compilation
-//
-//  Created by Daniel Regnard on 01/03/2017.
-//  Copyright © 2017 A. All rights reserved.
-//
-
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <stdlib.h>
 
-int main(int argc, const char * argv[]) {
-  
-    for (int i = 0; i < 10; i++) {
-        std::cout << "Re test Git\n" << std::endl;
-    }
+#include "Variable.hpp"
+#include "Terminal.h"
+#include "Non_terminal.h"
+#include "functions.hpp"
+
+
+using namespace std;
+
+int main() {
+    
+    Terminal test;
+    
+    test.set_name("test");
+    cout << test.get_name() << endl;
+    
+    
+    vector<Variable> tab_var;
+    
+    loading(tab_var);
+    
+    
+    
+    
     
     return 0;
 }
