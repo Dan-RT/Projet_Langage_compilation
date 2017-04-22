@@ -23,3 +23,18 @@ void Variable::set_name(string name){
 string Variable::get_name() const {
     return this->name;
 }
+
+void Variable::set_type(int i){
+    
+    if (i == 1 || i == 2) {
+        this->type = i;
+    } else {
+        cout << "Error : type send to Variable::set_type() is incorrect. Should be 1 for terminals, 2 for non terminals" << endl;
+        exit(0);
+    }
+    
+}
+
+int Variable::get_type() const {
+    return this->type;
+}

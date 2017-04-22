@@ -16,15 +16,14 @@ int main() {
     
     Terminal test;
     
-    test.set_name("test");
-    cout << test.get_name() << endl;
+    //test.set_name("test");
+    //cout << test.get_name() << endl;
     
-    
-    vector<Variable> tab_var;
+    vector<Terminal> tab_var;
+
+    //test.set_axiome(true);
     
     loading(tab_var);
-    
-    
     
     
     

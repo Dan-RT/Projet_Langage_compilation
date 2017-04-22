@@ -15,7 +15,7 @@
 #include "Terminal.h"
 #include "Non_terminal.h"
 
-int loading (vector<Variable> &tab_var);
+int loading (vector<Terminal> &tab_var);
 
 
 

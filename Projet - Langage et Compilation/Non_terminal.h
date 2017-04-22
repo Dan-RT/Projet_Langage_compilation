@@ -18,7 +18,6 @@ public:
     
     Non_terminal();
     
-    
     virtual ~Non_terminal();
     
 };
