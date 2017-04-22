@@ -20,11 +20,13 @@ int main() {
     //cout << test.get_name() << endl;
     
     vector<Terminal> tab_var;
+    vector<Non_terminal> tab_var_NT;
 
     //test.set_axiome(true);
     
     loading(tab_var);
-    
+    show_all_rules(tab_var);
+    create_non_terminals(tab_var_NT, tab_var);
     
     
     return 0;

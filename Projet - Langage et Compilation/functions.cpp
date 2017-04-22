@@ -55,10 +55,14 @@ int loading (vector<Terminal> &tab_var) {
             tmp_NT.set_type(1);
             if (cpt == 0) {
                 tmp_NT.set_axiome(true);
+                cpt++;
+            } else {
+                tmp_NT.set_axiome(false);
             }
             cout << data;
             
             while (data != "$") {
+                
                 if (data == "=" || data == "|") {
                     
                     cout << data;
@@ -79,12 +83,14 @@ int loading (vector<Terminal> &tab_var) {
             
             tab_var.push_back(tmp_NT);
             
-            cpt++;
+            
         }
+        cpt++;
         
         cout << endl;
         
-        show_all_rules(tab_var);
+        
+        
         
         return 1;
     } else {
@@ -100,12 +106,16 @@ int loading (vector<Terminal> &tab_var) {
 
 void create_non_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var) {
     
+    cout << "\n---Fonction création Non terminaux---\n" << endl;
     for (int i = 0; i < tab_var.size(); i++) {
-        for (int j = 0; i < tab_var[i].get_nb_rules(); i++) {
-            tab_var[i].get_rule(j);
+        cout << "Var : " << tab_var[i].get_name() << endl;
+        for (int j = 0; j < tab_var[i].get_nb_rules(); j++) {
+            cout << tab_var[i].get_rule(j) << endl;
             //fonction pas encore fini
         }
+        cout << endl;
     }
+    
 }
 
 

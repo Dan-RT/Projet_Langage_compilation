@@ -16,6 +16,8 @@
 #include "Non_terminal.h"
 
 int loading (vector<Terminal> &tab_var);
+void show_all_rules (vector<Terminal> &tab_var);
+void create_non_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var);
 
 
 
