@@ -9,7 +9,7 @@
 #include "functions.hpp"
 
 
-string choose_file() {  // fonction qui recupere le nom d'un fichier
+string choose_file() {  //fonction qui recupere le nom d'un fichier auprès du user
     
     string name;
     
@@ -21,6 +21,9 @@ string choose_file() {  // fonction qui recupere le nom d'un fichier
     return name+b;
 }
 
+
+
+                /*      Affichage       */
 
 void show_all_rules (vector<Non_terminal> &tab_NT) {
     
@@ -47,6 +50,9 @@ void show_all_non_terminals (vector<Non_terminal> tab_NT) {
         cout << tab_NT[i].get_name() << endl;
     }
 }
+
+
+
 
 
 int loading (vector<Non_terminal> &tab_NT) {
@@ -122,7 +128,11 @@ void get_name_NT (vector<Non_terminal> &tab_NT, vector<string> &tab_name) {
     }
 }
 
+
+
 bool check_terminal_existence (string data, vector<string> tab_name_T) {
+    
+//fonction regardant si un terminal existe déjà pour un nom donné ou non, histoire qu'on ne le crée pas deux fois
     
     for (int i = 0; i < tab_name_T.size(); i++) {
         if (tab_name_T[i] == data) {
@@ -140,6 +150,18 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
     string rule_tested = "";
     
     
+    /*
+     
+     - Prendre chaque variable
+        - Regarder ses règles
+            - Chercher si le nom de chaque non terminaux est dedans
+            - Si oui le/les supprimer
+                - Checker si on a affaire à un ou plusieurs Terminal à ajouter
+                    - Si c'est le cas on les sépare
+                - Ajouter comme Terminal
+     
+     */
+    
     cout << "\n---Fonction création Terminaux---\n" << endl;
     
     for (int i = 0; i < tab_NT.size(); i++) {
@@ -152,6 +174,9 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
             
             for (int k = 0; k < tab_name_NT.size(); k++) {
                 
+                
+                //Ici on recherche les éventuels NT se mêlant aux T dans les règles
+                
                 size_t found = rule_tested.find(tab_name_NT[k]);
                 
                 if (found!=std::string::npos) {
@@ -160,9 +185,12 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
                     cout << "New rule : " << rule_tested << endl;
                 }
                 
-                //on vérifie avant d'ajouter que la règle n'est pas vide et qu'elle n'existe pas déjà dans le tableau
+                
+                
                 
                 if (k == tab_name_NT.size()-1) {
+                    
+                    //on vérifie avant d'ajouter que le T n'est pas en réalité plusieurs T, si oui on les sépare
                     
                     if (rule_tested.size() > 1) {
                         
@@ -185,6 +213,9 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
                             }
                         }
                     } else {
+                        
+                        //on vérifie avant d'ajouter que le T n'est pas vide et qu'il n'existe pas déjà dans le tableau
+                        
                         if ((rule_tested != "") && (check_terminal_existence(rule_tested, tab_name_T) != true)) {
                             cout << "Adding " << rule_tested << " to tab_name_T" << endl;
                             Terminal var_t;
