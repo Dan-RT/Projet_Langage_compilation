@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		650516D11EAB869300145A3C /* functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650516CF1EAB869300145A3C /* functions.cpp */; };
+		650516D11EAB869300145A3C /* initial_functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 650516CF1EAB869300145A3C /* initial_functions.cpp */; };
 		655ACC931E66BDD900A9F0E4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 655ACC921E66BDD900A9F0E4 /* main.cpp */; };
 		65AA66A11EAB82C6008B60D4 /* Non_terminal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65AA669F1EAB82C6008B60D4 /* Non_terminal.cpp */; };
 		65AA66A21EAB82C6008B60D4 /* Terminal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65AA66A01EAB82C6008B60D4 /* Terminal.cpp */; };
@@ -27,8 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		650516CF1EAB869300145A3C /* functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = functions.cpp; sourceTree = "<group>"; };
-		650516D01EAB869300145A3C /* functions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
+		650516CF1EAB869300145A3C /* initial_functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = initial_functions.cpp; sourceTree = "<group>"; };
+		650516D01EAB869300145A3C /* initial_functions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = initial_functions.hpp; sourceTree = "<group>"; };
 		655ACC8F1E66BDD900A9F0E4 /* Projet - Langage et Compilation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Projet - Langage et Compilation"; sourceTree = BUILT_PRODUCTS_DIR; };
 		655ACC921E66BDD900A9F0E4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		65AA669D1EAB82C6008B60D4 /* Non_terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Non_terminal.h; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 				65AA669F1EAB82C6008B60D4 /* Non_terminal.cpp */,
 				65AA669E1EAB82C6008B60D4 /* Terminal.h */,
 				65AA66A01EAB82C6008B60D4 /* Terminal.cpp */,
-				650516CF1EAB869300145A3C /* functions.cpp */,
-				650516D01EAB869300145A3C /* functions.hpp */,
+				650516CF1EAB869300145A3C /* initial_functions.cpp */,
+				650516D01EAB869300145A3C /* initial_functions.hpp */,
 				655ACC921E66BDD900A9F0E4 /* main.cpp */,
 			);
 			path = "Projet - Langage et Compilation";
@@ -141,7 +141,7 @@
 			files = (
 				65AA66A21EAB82C6008B60D4 /* Terminal.cpp in Sources */,
 				655ACC931E66BDD900A9F0E4 /* main.cpp in Sources */,
-				650516D11EAB869300145A3C /* functions.cpp in Sources */,
+				650516D11EAB869300145A3C /* initial_functions.cpp in Sources */,
 				65AA66A11EAB82C6008B60D4 /* Non_terminal.cpp in Sources */,
 				65AA66A51EAB83E1008B60D4 /* Variable.cpp in Sources */,
 			);

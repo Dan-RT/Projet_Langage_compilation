@@ -7,7 +7,7 @@
 #include "Variable.hpp"
 #include "Terminal.h"
 #include "Non_terminal.h"
-#include "functions.hpp"
+#include "initial_functions.hpp"
 
 
 using namespace std;

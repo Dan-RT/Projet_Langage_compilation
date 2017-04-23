@@ -6,7 +6,7 @@
 //  Copyright © 2017 A. All rights reserved.
 //
 
-#include "functions.hpp"
+#include "initial_functions.hpp"
 
 
 string choose_file() {  //fonction qui recupere le nom d'un fichier auprès du user
@@ -37,7 +37,7 @@ void show_all_rules (vector<Non_terminal> &tab_NT) {
 
 void show_all_terminals (vector<Terminal> tab_T) {
     
-    cout << "Non terminals : " << endl;
+    cout << "Terminals : " << endl;
     for (int i = 0; i < tab_T.size(); i++) {
         cout << tab_T[i].get_name() << endl;
     }
@@ -45,7 +45,7 @@ void show_all_terminals (vector<Terminal> tab_T) {
 
 void show_all_non_terminals (vector<Non_terminal> tab_NT) {
     
-    cout << "Terminals : " << endl;
+    cout << "Non terminals : " << endl;
     for (int i = 0; i < tab_NT.size(); i++) {
         cout << tab_NT[i].get_name() << endl;
     }
