@@ -72,7 +72,6 @@ int loading (vector<Non_terminal> &tab_NT) {
             
             Non_terminal tmp_NT;
             tmp_NT.set_name(data);
-            tmp_NT.set_type(1);
             if (cpt == 0) {
                 tmp_NT.set_axiome(true);
                 cpt++;

@@ -18,6 +18,9 @@ private:
 public:
     
     Terminal();
+    
+    void set_name (string data);
+    
     virtual ~Terminal();
     
 };
