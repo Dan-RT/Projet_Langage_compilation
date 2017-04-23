@@ -24,9 +24,15 @@ void Non_terminal::add_rules(string rule) {
     tab_rules.push_back(rule);
 }
 
-void Non_terminal::delete_rules() {
-    //à compléter
+void Non_terminal::delete_rule(int indice) {
+    tab_rules.erase(tab_rules.begin()+indice);
 }
+
+void Non_terminal::modify_rule(int indice, string data) {
+    tab_rules[indice] = data;
+}
+
+
 
 bool Non_terminal::is_axiome() {
     return axiome;
@@ -40,7 +46,7 @@ int Non_terminal::get_nb_rules() const {
     return tab_rules.size();
 }
 
-void Non_terminal::show_rules () const {
+/*void Non_terminal::show_rules () const {
     cout << "Var : " << this->get_name() << endl;
     
     for (int i = 0; i < tab_rules.size(); i++) {
@@ -48,7 +54,19 @@ void Non_terminal::show_rules () const {
     }
     cout << endl;
 }
+*/
 
+void Non_terminal::show_rules () const {
+    cout << this->get_name() << " = ";
+    
+    for (int i = 0; i < tab_rules.size(); i++) {
+        cout << tab_rules[i];
+        if (i+1 != tab_rules.size()) {
+            cout << "|";
+        }
+    }
+    cout << endl;
+}
 
 
 

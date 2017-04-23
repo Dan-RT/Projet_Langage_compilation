@@ -19,4 +19,10 @@
 #include "Terminal.h"
 #include "Non_terminal.h"
 
+
+
+void delete_recursive (vector<Non_terminal> &tab_NT, vector<string> &tab_name_NT);
+
+
+
 #endif /* recursivite_hpp */

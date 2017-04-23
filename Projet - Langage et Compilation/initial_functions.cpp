@@ -29,7 +29,7 @@ void show_all_rules (vector<Non_terminal> &tab_NT) {
     
     for (int i = 0; i < tab_NT.size(); i++) {
         
-        if (tab_NT[i].get_type() == 1) {
+        if (tab_NT[i].get_type() == 2) {
             tab_NT[i].show_rules();
         }
     }
@@ -165,7 +165,7 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
      
      */
     
-    cout << "\n---Fonction création Terminaux---\n" << endl;
+    cout << "\n---Fonction creation Terminaux---\n" << endl;
     
     for (int i = 0; i < tab_NT.size(); i++) {
         cout << "Var : " << tab_NT[i].get_name() << endl;
@@ -234,6 +234,8 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
         }
         cout << endl;
     }
+    
+    cout << "\n---Fin fonction creation Terminaux---\n" << endl;
     
 }
 

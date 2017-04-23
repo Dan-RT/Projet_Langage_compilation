@@ -50,7 +50,7 @@ int get_type (vector<Terminal> &tab_T, vector<Non_terminal> &tab_NT, vector<stri
 
 void first(vector<Terminal> &tab_T, vector<Non_terminal> &tab_NT, vector<string> tab_name_NT, vector<string> tab_name_T) {
     
-    cout << "---Fonction calcul des First---\n[Work in progress]\n" << endl;
+    cout << "\n\n---Fonction calcul des First---\n[Work in progress]\n" << endl;
     
     for (int i = 0; i < tab_T.size(); i++) {
         tab_T[i].show_tab_first();
@@ -151,6 +151,8 @@ void first(vector<Terminal> &tab_T, vector<Non_terminal> &tab_NT, vector<string>
         }
         
     }
+    
+    cout << "\n\n---Fin fonction calcul des First---\n\n" << endl;
 }
 
 

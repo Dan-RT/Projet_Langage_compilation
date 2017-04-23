@@ -45,12 +45,12 @@ void Variable::set_tab_first(string data) {
 
 void Variable::show_tab_first () const {
     
-    cout << "\nVar : " << name << " First : ";
+    cout << "First( " << name << " ) = {";
     
     for (int i = 0; i < tab_first.size(); i++) {
-        cout << tab_first[i] << " ";
+        cout << " " << tab_first[i] << " ";
     }
-    cout << endl;
+    cout << "}" << endl;
 }
 
 bool Variable::contains_final_sign () const {

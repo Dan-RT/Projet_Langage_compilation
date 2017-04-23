@@ -9,6 +9,7 @@
 #include "Non_terminal.h"
 #include "initial_functions.hpp"
 #include "analyseur.hpp"
+#include "recursivite.hpp"
 
 using namespace std;
 
@@ -29,20 +30,36 @@ int main() {
      */
     
     
+    string test = "abcd";
+    test.erase(test.begin()+0);
+    cout << test <<endl;
+    
+    
     vector<Terminal> tab_T;
     vector<Non_terminal> tab_NT;
     vector<string> tab_name_NT, tab_name_T;
 
     loading(tab_NT);
     
+    
+    
+    
     show_all_rules(tab_NT);
     
     create_terminals(tab_NT, tab_T, tab_name_NT, tab_name_T);
+    
+    delete_recursive(tab_NT, tab_name_NT);
+    
+    show_all_rules(tab_NT);
+    
     
     show_all_terminals(tab_T);
     show_all_non_terminals(tab_NT);
     
     first(tab_T, tab_NT, tab_name_NT, tab_name_T);
+    
+    
+    
     
     return 0;
 }

@@ -23,7 +23,8 @@ public:
     
     void set_axiome(bool choice);
     void add_rules(string rule);
-    void delete_rules();
+    void modify_rule(int indice, string data);
+    void delete_rule(int indice);
     void look_for_terminals();
     void set_name(string name);
     
