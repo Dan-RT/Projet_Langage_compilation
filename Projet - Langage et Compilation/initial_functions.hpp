@@ -19,7 +19,7 @@
 
 int loading (vector<Non_terminal> &tab_var);
 void show_all_rules (vector<Non_terminal> &tab_var);
-void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T, vector<string> tab_name_NT, vector<string> tab_name_T);
+void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T, vector<string> &tab_name_NT, vector<string> &tab_name_T);
 void show_all_terminals (vector<Terminal> tab_T);
 void show_all_non_terminals (vector<Non_terminal> tab_NT);
 

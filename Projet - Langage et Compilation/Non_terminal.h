@@ -16,6 +16,7 @@ private:
     
     bool axiome;
     vector<string> tab_rules;
+    vector<char> tab_first;
     
 public:
     
@@ -29,11 +30,13 @@ public:
     void delete_rules();
     void look_for_terminals();
     void set_name(string name);
+    void set_tab_first(char data);
     
     bool is_axiome();
     string get_rule(int indice);
     int get_nb_rules() const;
     void show_rules() const;
+    void show_tab_first () const;
     
     virtual ~Non_terminal();
     

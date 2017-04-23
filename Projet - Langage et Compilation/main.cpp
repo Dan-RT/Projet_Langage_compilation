@@ -8,7 +8,7 @@
 #include "Terminal.h"
 #include "Non_terminal.h"
 #include "initial_functions.hpp"
-
+#include "analyseur.hpp"
 
 using namespace std;
 
@@ -29,20 +29,32 @@ int main() {
      */
     
     
-    vector<Terminal> tab_var_T;
-    vector<Non_terminal> tab_var_NT;
+    vector<Terminal> tab_T;
+    vector<Non_terminal> tab_NT;
     vector<string> tab_name_NT, tab_name_T;
 
-    loading(tab_var_NT);
+    loading(tab_NT);
     
-    show_all_rules(tab_var_NT);
+    show_all_rules(tab_NT);
     
-    create_terminals(tab_var_NT, tab_var_T, tab_name_NT, tab_name_T);
+    create_terminals(tab_NT, tab_T, tab_name_NT, tab_name_T);
     
-    show_all_terminals(tab_var_T);
-    show_all_non_terminals(tab_var_NT);
+    show_all_terminals(tab_T);
+    show_all_non_terminals(tab_NT);
     
-    
+    first(tab_T, tab_NT, tab_name_NT, tab_name_T);
     
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+

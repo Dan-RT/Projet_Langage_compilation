@@ -49,9 +49,18 @@ void Non_terminal::show_rules () const {
     cout << endl;
 }
 
+void Non_terminal::set_tab_first(char data) {
+    tab_first.push_back(data);
+}
 
-
-
+void Non_terminal::show_tab_first () const {
+    
+    cout << "Var : " << name << "\nFirst :"<< endl;
+    
+    for (int i = 0; i < tab_first.size(); i++) {
+        cout << tab_first[i] << endl;
+    }
+}
 
 
 

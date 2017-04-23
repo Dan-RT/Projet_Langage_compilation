@@ -143,7 +143,7 @@ bool check_terminal_existence (string data, vector<string> tab_name_T) {
 }
 
 
-void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T, vector<string> tab_name_NT, vector<string> tab_name_T) {
+void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T, vector<string> &tab_name_NT, vector<string> &tab_name_T) {
     
     get_name_NT(tab_NT, tab_name_NT);
     
