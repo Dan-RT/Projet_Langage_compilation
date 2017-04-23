@@ -88,12 +88,17 @@ int loading (vector<Non_terminal> &tab_NT) {
                     cout << data;
                     myStream >> data;
                     
+                    tmp_NT.add_rules(data);
+                    cout << data;
+                    
+                    /*
                     if (data != "#") {
                         tmp_NT.add_rules(data);
                         cout << data;
                     } else {
-                        cout << data;
+                        
                     }
+                     */
                     
                 } else {
                     myStream >> data;
@@ -102,7 +107,6 @@ int loading (vector<Non_terminal> &tab_NT) {
             cout << endl;
             
             tab_NT.push_back(tmp_NT);
-            
             
         }
         cpt++;
@@ -204,7 +208,7 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
                             ss << char_tmp;
                             ss >> string_tmp;
                             
-                            if (check_terminal_existence(string_tmp, tab_name_T) != true) {
+                            if (check_terminal_existence(string_tmp, tab_name_T) != true && string_tmp != "#") {
                                 cout << "Adding " << string_tmp << " to tab_name_T" << endl;
                                 Terminal var_t;
                                 tab_name_T.push_back(string_tmp);
@@ -216,7 +220,7 @@ void create_terminals (vector<Non_terminal> &tab_NT, vector<Terminal> &tab_var_T
                         
                         //on vérifie avant d'ajouter que le T n'est pas vide et qu'il n'existe pas déjà dans le tableau
                         
-                        if ((rule_tested != "") && (check_terminal_existence(rule_tested, tab_name_T) != true)) {
+                        if (((rule_tested != "") && (check_terminal_existence(rule_tested, tab_name_T) != true)) && rule_tested != "#") {
                             cout << "Adding " << rule_tested << " to tab_name_T" << endl;
                             Terminal var_t;
                             tab_name_T.push_back(rule_tested);
